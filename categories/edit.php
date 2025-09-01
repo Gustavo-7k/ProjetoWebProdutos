@@ -39,8 +39,8 @@ include __DIR__ . '/../includes/header.php';
     <input type="text" name="categoria" class="form-control" value="<?php echo htmlspecialchars($cat['categoria']); ?>" required />
   </div>
   <div class="col-12">
-    <button class="btn btn-primary">Salvar</button>
-  <a class="btn btn-secondary" href="<?php echo SITE_BASE; ?>/categories/index.php">Cancelar</a>
+    <button class="btn btn-primary" style="background-color: #556B2F; color: #fff;">Salvar</button>
+  <a class="btn btn-danger" style="background-color: #B22222; color: #fff; border: none;" href="<?php echo SITE_BASE; ?>/categories/index.php">Cancelar</a>
   </div>
 </form>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

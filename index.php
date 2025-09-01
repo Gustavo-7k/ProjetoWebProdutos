@@ -15,7 +15,7 @@ include __DIR__ . '/includes/header.php';
       <div class="card-body">
         <h5 class="card-title">Produtos</h5>
         <p class="card-text">Cadastre, edite e remova produtos.</p>
-  <a class="btn btn-primary" href="<?php echo SITE_BASE; ?>/products/index.php">Abrir</a>
+  <a class="btn btn-primary" style="background-color: #556B2F; color: #fff;" href="<?php echo SITE_BASE; ?>/products/index.php">Abrir</a>
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@ include __DIR__ . '/includes/header.php';
       <div class="card-body">
         <h5 class="card-title">Categorias</h5>
         <p class="card-text">Gerencie as categorias de produtos.</p>
-  <a class="btn btn-secondary" href="<?php echo SITE_BASE; ?>/categories/index.php">Abrir</a>
+  <a class="btn btn-secondary" style="background-color: #556B2F; color: #fff;" href="<?php echo SITE_BASE; ?>/categories/index.php">Abrir</a>
       </div>
     </div>
   </div>

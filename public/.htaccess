@@ -1,8 +1,0 @@
-# For Apache setups using DocumentRoot to this folder
-# Redirect all requests to the root index.php if needed
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-# Ensure PHP files in subfolders run with leading slash URLs
-# This is optional and environment-specific.
-</IfModule>

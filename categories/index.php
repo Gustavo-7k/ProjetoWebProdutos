@@ -17,7 +17,7 @@ include __DIR__ . '/../includes/header.php';
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
+  <!-- <th>ID</th> -->
       <th>Categoria</th>
       <th class="text-end">Ações</th>
     </tr>
@@ -25,10 +25,10 @@ include __DIR__ . '/../includes/header.php';
   <tbody>
     <?php while ($row = $result->fetch_assoc()): ?>
       <tr>
-        <td><?php echo (int)$row['id']; ?></td>
+  <!-- <td><?php echo (int)$row['id']; ?></td> -->
         <td><?php echo htmlspecialchars($row['categoria']); ?></td>
         <td class="text-end">
-          <a class="btn btn-sm btn-secondary" href="<?php echo SITE_BASE; ?>/categories/edit.php?id=<?php echo (int)$row['id']; ?>">Editar</a>
+          <a class="btn btn-sm" style="background-color: #556B2F; color: #fff; border: none;" href="<?php echo SITE_BASE; ?>/categories/edit.php?id=<?php echo (int)$row['id']; ?>">Editar</a>
           <a class="btn btn-sm btn-danger" href="<?php echo SITE_BASE; ?>/categories/delete.php?id=<?php echo (int)$row['id']; ?>" onclick="return confirm('Excluir esta categoria?');">Excluir</a>
         </td>
       </tr>

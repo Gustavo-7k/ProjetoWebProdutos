@@ -34,8 +34,8 @@ include __DIR__ . '/../includes/header.php';
 <form method="post">
   <?php include __DIR__ . '/form_fields.php'; ?>
   <div>
-    <button class="btn btn-primary">Salvar</button>
-    <a class="btn btn-secondary" href="<?php echo SITE_BASE; ?>/products/index.php">Cancelar</a>
+    <button class="btn btn-primary" style="background-color: #556B2F; color: #fff;">Salvar</button>
+    <a class="btn btn-danger" style="background-color: #B22222; color: #fff; border: none;" href="<?php echo SITE_BASE; ?>/products/index.php">Cancelar</a>
   </div>
 </form>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

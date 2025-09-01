@@ -18,7 +18,7 @@ include __DIR__ . '/../includes/header.php';
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
+  <!-- <th>ID</th> -->
       <th>Nome</th>
       <th>Categoria</th>
       <th>Preço</th>
@@ -29,7 +29,7 @@ include __DIR__ . '/../includes/header.php';
   <tbody>
   <?php while ($row = $result->fetch_assoc()): ?>
     <tr>
-      <td><?php echo (int)$row['id']; ?></td>
+  <!-- <td><?php echo (int)$row['id']; ?></td> -->
       <td><?php echo htmlspecialchars($row['nome']); ?></td>
       <td><?php echo htmlspecialchars($row['categoria'] ?? '—'); ?></td>
       <td>R$ <?php echo number_format((float)$row['preco'], 2, ',', '.'); ?></td>
@@ -37,11 +37,11 @@ include __DIR__ . '/../includes/header.php';
         <?php if ((int)$row['disponivel'] === 1): ?>
           <span class="badge bg-success">Disponível</span>
         <?php else: ?>
-          <span class="badge bg-secondary">Indisponível</span>
+          <span class="badge" style="background-color: #e57373; color: #fff;">Indisponível</span>
         <?php endif; ?>
       </td>
       <td class="text-end">
-  <a class="btn btn-sm btn-secondary" href="<?php echo SITE_BASE; ?>/products/edit.php?id=<?php echo (int)$row['id']; ?>">Editar</a>
+  <a class="btn btn-sm" style="background-color: #556B2F; color: #fff; border: none;" href="<?php echo SITE_BASE; ?>/products/edit.php?id=<?php echo (int)$row['id']; ?>">Editar</a>
   <a class="btn btn-sm btn-danger" href="<?php echo SITE_BASE; ?>/products/delete.php?id=<?php echo (int)$row['id']; ?>" onclick="return confirm('Excluir este produto?');">Excluir</a>
       </td>
     </tr>

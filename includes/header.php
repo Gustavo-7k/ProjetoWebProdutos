@@ -13,7 +13,12 @@ require_once __DIR__ . '/../config/app.php';
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<style>
+  .navbar-custom {
+    background-color: #380014ff !important;
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
   <div class="container-fluid">
   <a class="navbar-brand" href="<?php echo SITE_BASE; ?>/index.php">Mini Sistema</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,12 +26,21 @@ require_once __DIR__ . '/../config/app.php';
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
-  <li class="nav-item"><a class="nav-link" href="<?php echo SITE_BASE; ?>/products/index.php">Produtos</a></li>
-  <li class="nav-item"><a class="nav-link" href="<?php echo SITE_BASE; ?>/categories/index.php">Categorias</a></li>
+  <?php
+    $current = $_SERVER['REQUEST_URI'];
+    $isProdutos = strpos($current, '/products/') !== false;
+    $isCategorias = strpos($current, '/categories/') !== false;
+    $isIndex = strpos($current, '/index.php') !== false && !$isProdutos && !$isCategorias;
+  ?>
+  <li class="nav-item">
+    <a class="nav-link<?php echo $isProdutos ? ' active fw-bold' : ''; ?>" href="<?php echo SITE_BASE; ?>/products/index.php">Produtos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link<?php echo $isCategorias ? ' active fw-bold' : ''; ?>" href="<?php echo SITE_BASE; ?>/categories/index.php">Categorias</a>
+  </li>
       </ul>
       <ul class="navbar-nav ms-auto">
         <?php if (isset($_SESSION['user'])): ?>
-          <li class="nav-item"><span class="navbar-text me-2">Olá, <?php echo htmlspecialchars($_SESSION['user']['username']); ?></span></li>
           <li class="nav-item"><a class="nav-link" href="<?php echo SITE_BASE; ?>/auth/logout.php">Sair</a></li>
         <?php else: ?>
           <li class="nav-item"><a class="nav-link" href="<?php echo SITE_BASE; ?>/auth/login.php">Entrar</a></li>
